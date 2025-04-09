@@ -23,6 +23,10 @@ app.use(passport.initialize())
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the User API!");
+});
+
 app.post("/api/user/register", (req, res) => {
     userService.registerUser(req.body)
     .then((msg) => {
