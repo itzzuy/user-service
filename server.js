@@ -11,7 +11,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt
 const HTTP_PORT = process.env.PORT || 8080;
 
 const jwtOptions = {
-    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('jwt'),
     secretOrKey: process.env.JWT_SECRET
 };
 
